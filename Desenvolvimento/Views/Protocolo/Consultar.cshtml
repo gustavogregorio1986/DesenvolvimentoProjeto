@@ -53,8 +53,8 @@
                 <td>@protocolo.Tipo</td>
                 <td>@protocolo.DataProtocolo</td>
                 <td>
-                  <a role="button" class="btn btn-primary">Editar</a>
-                  <a role="button" class="btn btn-danger">Apagar</a>
+                  <a role="button" asp-controller="Protocolo" asp-action="Editar" asp-route-id="@protocolo.Id" class="btn btn-primary">Editar</a>
+                  <a role="button" asp-controller="Protocolo" asp-action="ApagarConfirmacao" asp-route-id="@protocolo.Id" class="btn btn-danger">Apagar</a>
               </td>
             </tr>        
         }

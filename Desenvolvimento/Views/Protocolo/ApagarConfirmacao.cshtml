@@ -1,0 +1,11 @@
+﻿@model ProtocoloModel
+@{
+    ViewData["Title"] = "Deleção do Protocolo";
+}
+
+<div class="text-center">
+    <h2 class="display-4">Deleção do protocolo que é (@Model.Nome)</h2>
+</div>
+
+<a role="button" asp-controller="Protocolo" asp-action="Consultar" class="btn btn-danger">Voltar</a>
+<a role="button" asp-controller="Protocolo" asp-route-id="@Model.Id" asp-action="Apagar" class="btn btn-danger">Confirmar a exclusão</a>

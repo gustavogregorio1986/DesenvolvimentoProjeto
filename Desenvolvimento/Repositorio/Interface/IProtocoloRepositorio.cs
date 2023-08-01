@@ -8,5 +8,11 @@ namespace Desenvolvimento.Repositorio.Interface
         ProtocoloModel Adiciona(ProtocoloModel protocolo);
 
         List<ProtocoloModel> ListarTodos();
+
+        ProtocoloModel BuscarPorId(int id);
+
+        ProtocoloModel Atualizar(ProtocoloModel protocolo);
+
+        bool Apagar(int id);
     }
 }

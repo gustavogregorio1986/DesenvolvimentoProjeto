@@ -1,0 +1,49 @@
+﻿@model ProtocoloModel
+@{
+    ViewData["Title"] = "Editar Protocolo";
+}
+
+<div class="text-center">
+    <h2 class="display-4">Editar Protocolo</h2>
+</div>
+
+<form asp-controller="Protocolo" asp-action="Alterar" method="post">
+  <input type="hidden" asp-for="Id"/>
+  <div class="form-group">
+    <label for="nome">Nome</label>
+    <input type="text" asp-for="Nome" class="form-control" placeholder="Seu nome">
+    @Html.ValidationMessageFor(x => x.Nome)
+  </div>
+  <div class="form-group">
+    <label for="e-mail">E-mail</label>
+    <input type="text" asp-for="Email" class="form-control" placeholder="Seu email">
+    @Html.ValidationMessageFor(x => x.Email)
+  </div>
+  <div class="form-group">
+    <label for="numProtooclo">Numero do protocolo</label>
+    <input type="number" asp-for="NumProtocolo" class="form-control" placeholder="Seu numero protoocolo">
+    @Html.ValidationMessageFor(x => x.NumProtocolo)
+  </div>
+  <div class="form-group">
+    <label for="tipo">Tipo</label>
+    <input type="text" asp-for="Tipo" class="form-control" placeholder="Seu tipo do protoocolo">
+    @Html.ValidationMessageFor(x => x.Tipo)
+  </div>
+  <div class="form-group input-group date" data-date-format="dd/mm/yyyy">
+    <label for="dataProtocolo">Data Protocolo</label>
+     <input  type="text" asp-for="DataProtocolo" class="form-control" placeholder="dd/mm/yyyy">
+     <div class="input-group-addon" >
+        <span class="glyphicon glyphicon-th"></span>
+     </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Cadastrar Protocolo</button>
+</form>
+
+ <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- Plugin pro Datapicker novo , podendo abrir para escolher a data -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.1/js/bootstrap-datepicker.min.js'></script>
+    <script>
+     $('.input-group.date').datepicker({format: "dd/mm/yyyy"});
+    </script>
