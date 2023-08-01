@@ -1,4 +1,5 @@
-﻿@{
+﻿@model ProtocoloModel
+@{
     ViewData["Title"] = "Cadastrar Protocolo";
 }
 
@@ -6,26 +7,42 @@
     <h2 class="display-4">Cadastrar Protocolo</h2>
 </div>
 
-<form>
+<form asp-controller="Protocolo" asp-action="Cadastrar" method="post">
   <div class="form-group">
     <label for="nome">Nome</label>
-    <input type="text" class="form-control" placeholder="Seu nome">
+    <input type="text" asp-for="Nome" class="form-control" placeholder="Seu nome">
+    @Html.ValidationMessageFor(x => x.Nome)
   </div>
   <div class="form-group">
     <label for="e-mail">E-mail</label>
-    <input type="text" class="form-control" placeholder="Seu email">
+    <input type="text" asp-for="Email" class="form-control" placeholder="Seu email">
+    @Html.ValidationMessageFor(x => x.Email)
   </div>
   <div class="form-group">
     <label for="numProtooclo">Numero do protocolo</label>
-    <input type="number" class="form-control" placeholder="Seu numero protoocolo">
+    <input type="number" asp-for="NumProtocolo" class="form-control" placeholder="Seu numero protoocolo">
+    @Html.ValidationMessageFor(x => x.NumProtocolo)
   </div>
   <div class="form-group">
     <label for="tipo">Tipo</label>
-    <input type="text" class="form-control" placeholder="Seu tipo do protoocolo">
+    <input type="text" asp-for="Tipo" class="form-control" placeholder="Seu tipo do protoocolo">
+    @Html.ValidationMessageFor(x => x.Tipo)
   </div>
-  <div class="form-group">
-    <label for="dataProtooclo">Data do Protocolo</label>
-    <input type="text" class="form-control" placeholder="Sua data do protooclo">
+  <div class="form-group input-group date" data-date-format="dd/mm/yyyy">
+    <label for="dataProtocolo">Data Protocolo</label>
+     <input  type="text" asp-for="DataProtocolo" class="form-control" placeholder="dd/mm/yyyy">
+     <div class="input-group-addon" >
+        <span class="glyphicon glyphicon-th"></span>
+     </div>
   </div>
   <button type="submit" class="btn btn-primary">Cadastrar Protocolo</button>
 </form>
+
+ <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- Plugin pro Datapicker novo , podendo abrir para escolher a data -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.1/js/bootstrap-datepicker.min.js'></script>
+    <script>
+     $('.input-group.date').datepicker({format: "dd/mm/yyyy"});
+    </script>

@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Desenvolvimento.Migrations
 {
     [DbContext(typeof(BancoContext))]
-    [Migration("20230801191242_InitialCreate_db")]
-    partial class InitialCreate_db
+    [Migration("20230801194949_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -30,6 +30,9 @@ namespace Desenvolvimento.Migrations
 
                     b.Property<DateTime>("DataProtocolo")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Nome")
                         .HasColumnType("nvarchar(max)");
