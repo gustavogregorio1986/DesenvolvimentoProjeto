@@ -1,6 +1,7 @@
 ﻿using Desenvolvimento.Models;
 using Desenvolvimento.Repositorio.Interface;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 
 namespace Desenvolvimento.Controllers
 {
@@ -41,7 +42,8 @@ namespace Desenvolvimento.Controllers
 
         public IActionResult Consultar()
         {
-            return View();
+            List<ProtocoloModel> listar = _protocoloRepositorio.ListarTodos();
+            return View(listar);
         }
     }
 }

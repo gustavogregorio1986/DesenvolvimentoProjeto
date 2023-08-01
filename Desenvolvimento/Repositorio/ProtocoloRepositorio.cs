@@ -1,6 +1,8 @@
 ﻿using Desenvolvimento.Data;
 using Desenvolvimento.Models;
 using Desenvolvimento.Repositorio.Interface;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Desenvolvimento.Repositorio
 {
@@ -19,6 +21,11 @@ namespace Desenvolvimento.Repositorio
             _bancoContext.SaveChanges();
 
             return protocolo;
+        }
+
+        public List<ProtocoloModel> ListarTodos()
+        {
+            return _bancoContext.Protocolos.ToList();
         }
     }
 }
